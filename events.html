@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Events</title>
+</head>
+<body>
+
+<!-- 
+  INTRODUCTION TO THE DOM (THE DOCUMENT OBJECT MODEL)
+  - It represents the structure of a document as a tree of objects, allowing developers to interact with and manipulate the content of a web page using JavaScript.
+  - The DOM is created by the browser when a web page is loaded, and it consists of a hierarchy of nodes that represent elements, attributes, and text content.
+  - Each html element within the webpage, such as headings, paragraphs, and buttons, is represented as a node in the DOM tree structure. 
+
+  HTML EVENTS
+  - Events are actions or occurrences that happen in the system or in the document, such as when a user clicks a button, hovers over an element, submits a form, or types in an input field.
+  - In web development, events are used to trigger JavaScript functions or scripts in response to user interactions with the web page.
+  - The most common HTML events are:
+    - onclick: when an element is clicked.
+    - onmouseover: when the mouse pointer is moved over an element.
+    - onmouseout: when the mouse pointer is moved out of an element.
+    - onkeydown: when a key is pressed down.
+    - onsubmit: when a form is submitted.
+    - onchange: when the value of an input element changes.
+    - onfocus: when an element receives focus.
+
+  - Javascript events we can play with: https://www.w3schools.com/js/js_events.asp#:~:text=An%20HTML%20event%20can%20be,HTML%20input%20field%20was%20changed
+  - A more comprehensive list of events can be found here: https://developer.mozilla.org/en-US/docs/Web/Events
+  - And here: https://www.w3schools.com/jsref/dom_obj_event.asp
+
+  -->
+
+<!-- Example 1: onclick event -->
+<button onclick="handleButtonClick()">Click Me</button>
+
+<!-- Example 2: onmouseover and onmouseout events -->
+<div onmouseover="handleMouseOver()" onmouseout="handleMouseOut()">
+    Hover over me
+</div>
+
+<!-- Example 3: onkeydown event -->
+<input type="text" onkeydown="handleKeyDown(event)">
+
+<!-- Example 4: onsubmit event -->
+<form onsubmit="handleSubmit(event)">
+    <input type="text" name="username" placeholder="Enter username">
+    <button type="submit">Submit</button>
+</form>
+
+<!-- Example 5: onchange event -->
+<input type="text" onchange="handleChange(event)" placeholder="Type here">
+
+<!-- Example 6: onfocus event -->
+<input type="text" onfocus="handleFocus()" placeholder="Click to focus">
+
+<script>
+    // JavaScript functions to handle events
+
+    // Example 1 function
+    function handleButtonClick() {
+        alert("Button clicked!");
+    }
+
+    // Example 2 functions
+    function handleMouseOver() {
+        console.log("Mouse over element");
+    }
+
+    function handleMouseOut() {
+        console.log("Mouse out of element");
+    }
+
+    // Example 3 function
+    function handleKeyDown(event) {
+        console.log("Key pressed:", event.key);
+    }
+
+    // Example 4 function
+    function handleSubmit(event) {
+        event.preventDefault();
+        const username = event.target.elements.username.value;
+        console.log("Form submitted with username:", username);
+    }
+
+    // Example 5 function
+    function handleChange(event) {
+        console.log("Input value changed to:", event.target.value);
+    }
+
+    // Example 6 function
+    function handleFocus() {
+        console.log("Input element focused");
+    }
+</script>
+
+</body>
+</html>
