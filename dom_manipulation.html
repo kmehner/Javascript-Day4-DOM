@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Manipulation with Events</title>
+  <!-- 
+  DOM MANIPULATION
+  Javascript can be used to manipulate the content of a web page by accessing and modifying the Document Object Model (DOM).
+
+  Common methods for DOM manipulation include:
+  1. getElementById(): Retrieves an element by its ID attribute.
+  2. getElementsByClassName(): Retrieves elements by their class name.
+  3. getElementsByTagName(): Retrieves elements by their tag name.
+  4. createElement(): Creates a new element node.
+  5. appendChild(): Appends a child node to an element.
+
+  In this example, we retrieve an element by its ID using getElementById() and update its content. 
+  We also dynamically create a new paragraph element using createElement() and append it to an existing container div using appendChild().
+   -->
+</head>
+<body>
+
+<div id="container">
+    <h1>Welcome to DOM Manipulation</h1>
+    <p id="message">This is a paragraph.</p>
+</div>
+
+<!-- Button to trigger document manipulation -->
+<button onclick="updateParagraph()">Update Paragraph</button>
+
+<script>
+    // JavaScript function to update paragraph content
+    function updateParagraph() {
+        // Retrieving the paragraph element by ID
+        const paragraph = document.getElementById("message");
+        
+        // Updating the paragraph content
+        paragraph.innerHTML = "Updated paragraph content";
+        
+        // Creating a new paragraph element
+        const newParagraph = document.createElement("p");
+        newParagraph.innerHTML = "This is a new paragraph.";
+        
+        // Appending the new paragraph to the container div
+        document.getElementById("container").appendChild(newParagraph);
+    }
+</script>
+
+</body>
+</html>
